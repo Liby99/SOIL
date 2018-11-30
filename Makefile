@@ -12,6 +12,7 @@ SRCDIR = src
 LIBDIR = lib
 INCDIR = src
 OBJDIR = obj
+INCLUDEDIR = include/SOIL
 
 CXX = gcc
 CXXFLAGS = -O2 -s -Wall
@@ -34,6 +35,8 @@ $(BIN): $(OBJ)
 	$(DELETER) $(BIN)
 	ar r $(BIN) $(OBJ)
 	ranlib $(BIN)
+	mkdir -p $(INCLUDEDIR)
+	cp $(SRCDIR)/*.h $(INCLUDEDIR)/*.h
 	@echo -------------------------------------------------------------------
 	@echo Done. As root, type 'make install' to install the library.
 
