@@ -28,3 +28,8 @@ if (SOIL_BUILD_TESTS)
 	target_link_libraries (test_SOIL SOIL)
 	install (TARGETS SOIL test_SOIL RUNTIME DESTINATION bin)
 endif ()
+
+file (
+  COPY "${CMAKE_CURRENT_SOURCE_DIR}/src/SOIL.h" 
+  DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/include/SOIL/"
+)
